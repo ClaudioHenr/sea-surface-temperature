@@ -10,6 +10,11 @@ def processar_imagem(image_path):
     # 2. Converter para o espaço de cores HSV
     hsv = cv2.cvtColor(imagem, cv2.COLOR_BGR2HSV)
     
+    # Mostrar a imagem convertida em HSV
+    cv2.imshow("Imagem em HSV", hsv)
+    cv2.waitKey(0)  # Espera uma tecla para continuar
+    cv2.destroyAllWindows()  # Fecha a janela após a visualização
+    
     # 3. Definir intervalos de cor para análise (ajustar conforme necessário)
     azul_baixo = np.array([90, 50, 50])    # Temperaturas frias
     azul_alto = np.array([130, 255, 255])
@@ -38,7 +43,7 @@ anos = ["2002", "2005", "2008", "2011"]
 resultados = []
 
 for ano in anos:
-    caminho = f"./assets/ocean/ocean_temp_sep_{ano}.jpeg"  # Ajustar os caminhos das imagens
+    caminho = f"./assets/ocean/BMP/ocean_temp_sep_{ano}.bmp"  # Ajustar os caminhos das imagens
     resultado = processar_imagem(caminho)
     resultados.append(resultado)
 
