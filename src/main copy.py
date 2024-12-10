@@ -25,7 +25,7 @@ def processar_imagem(image_path, ano):
     # 5. Destaca os oceanos nas imagens
     mask = cv2.bitwise_not(otsu_thresh)
     ocean_only = cv2.bitwise_and(imagem, imagem, mask=otsu_thresh)
-
+    
     # Mostrar resultados
     imageTitle = "Imagem com oceanos destacados - " + ano
     cv2.imshow(imageTitle, ocean_only)
